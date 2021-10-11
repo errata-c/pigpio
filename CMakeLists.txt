@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 project(pigpio
 LANGUAGES C 
-VERSION 0.71.0
+VERSION 0.79.0
 )
 
 include(CMakeDependentOption)

@@ -12,6 +12,9 @@ __pycache__
 build
 dist
 *.egg-info
+out
+CMakeSettings.json
+CMakeUserPresets.json
 
 tmp/
 

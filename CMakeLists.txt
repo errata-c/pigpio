@@ -151,7 +151,7 @@ export(EXPORT ${PROJECT_NAME}Targets
   NAMESPACE pigpio::
 )
 
-set(ConfigPackageLocation share/cmake/${PROJECT_NAME})
+set(ConfigPackageLocation share/${PROJECT_NAME})
 install(EXPORT ${PROJECT_NAME}Targets
   FILE
     ${PROJECT_NAME}Targets.cmake

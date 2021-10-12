@@ -9,9 +9,9 @@ include(CMakeDependentOption)
 
 # Options for the project
 option(BUILD_SHARED_LIBS "Create shared libraries" ON)
-option(BUILD_DAEMON "Build the daemon and the pigs executable for controlling the GPIO remotely" ON)
-option(BUILD_EXECUTABLES "Build the executables for the pigpio libraries" ON)
-option(BUILD_VCD_CONVERTER "Build the vcd converter for use with GTKWave" ON)
+option(BUILD_DAEMON "Build the daemon and the pigs executable for controlling the GPIO remotely" OFF)
+option(BUILD_EXECUTABLES "Build the executables for the pigpio libraries" OFF)
+option(BUILD_VCD_CONVERTER "Build the vcd converter for use with GTKWave" OFF)
 
 # Get the install/uninstall script
 include(FetchContent)
@@ -137,7 +137,7 @@ install(TARGETS ${TARGETS_TO_INSTALL}
     EXPORT ${PROJECT_NAME}Targets
 	LIBRARY  DESTINATION lib/$<CONFIG>
 	ARCHIVE  DESTINATION lib/$<CONFIG>
-	RUNTIME  DESTINATION bin
+	RUNTIME  DESTINATION bin$<$CONFIG:Debug,RelWithDebInfo,MinSizeRel>:/$<CONFIG>>
 )
 
 write_basic_package_version_file(
